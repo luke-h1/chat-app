@@ -24,7 +24,8 @@ jobs:
             cd chat-app
             export REDIS_URL=${{ secrets.REDIS_URL }}
             export CORS_ORIGIN=${{ secrets.CORS_ORIGIN }}
-            cd server 
+            cd server
+            npm install -g pnpm
             pnpm install
             pnpm build
             docker-compose down
