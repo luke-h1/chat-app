@@ -26,6 +26,8 @@ jobs:
             export CORS_ORIGIN=${{ secrets.CORS_ORIGIN }}
             cd server
             npm install -g pnpm
+            export NVM_DIR="$HOME/.nvm"[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+            nvm install 18.17.0 && nvm use 18.17.0
             pnpm install
             pnpm build
             docker-compose down
